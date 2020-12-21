@@ -1,0 +1,37 @@
+{
+    "baseurl": "https://denne.com.au/",
+    "rssLimit": 15,
+    "disablePathToLower": false,
+    "languageCode": "en-us",
+    "ignoreErrors": "error-output-taxonomy",
+    "title": "Reece's Weblog",
+    "publishdir": "output",
+    "permalinks": {
+        "post": ":year/:month/:day/:title/",
+        "fixed": ":title/"
+    },
+    "theme": "lanyon-hugo",
+    "params": {
+        "Title": "Reece's Weblog",
+        "Tagline": "The weblog of an IT pro focusing on cloud computing, music, sport, and culture",
+        "Author": "Reece Denne",
+        "GitHubUser": "reecestart",
+        "TwitterUser": "reecestart",
+        "LinkedInUser": "reecedenne",
+        "Description": "Original, technical content centered around cloud computing, as well as content on music, sport, and culture",
+        "DateForm": "21 Dec 2020"
+    },
+    "blackfriday": {
+        "fractions": false
+    },
+    "outputs": {
+        "home": ["HTML","RSS"],
+        "taxonomy": ["HTML","RSS"]
+    },
+    "outputformats": {
+        "RSS": {
+            "mediatype": "application/rss",
+            "baseName": "feed"
+        }
+    }
+}

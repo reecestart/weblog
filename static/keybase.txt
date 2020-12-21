@@ -1,0 +1,64 @@
+==================================================================
+https://keybase.io/reecestart
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://denne.com.au
+  * I am reecestart (https://keybase.io/reecestart) on keybase.
+  * I have a public key with fingerprint C2A2 1FA5 1C69 03D5 B232 D0B8 D153 075C 9A04 35AF
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "010137dd33d1e7a742debc3ab7b5d33e2a3d483be107162959e73967f3ad44654a750a",
+      "fingerprint": "c2a21fa51c6903d5b232d0b8d153075c9a0435af",
+      "full_hash": "806aff5d388e5a53d046eb089ea4f4db40e46fc118f1d1b133d6f7507ea7eb0c",
+      "host": "keybase.io",
+      "key_id": "d153075c9a0435af",
+      "kid": "010137dd33d1e7a742debc3ab7b5d33e2a3d483be107162959e73967f3ad44654a750a",
+      "uid": "32c6821f51064aa2c5c8811371e5c619",
+      "username": "reecestart"
+    },
+    "type": "eldest",
+    "version": 1
+  },
+  "ctime": 1547036495,
+  "expire_in": 157680000,
+  "prev": null,
+  "seqno": 1,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.80
+Comment: https://keybase.io/crypto
+
+yMILAnicrVJbSBRRGF6zNJekULKEJWlIZWGNc2bmzGU1KzAkFE0fxMDazsycWUe3
+XZ3dNU1WFMqHILqieXuoNwXTrAgryBuUipERoUIPlpFJFiayhVGdNXrrsfPyc/7/
++7/vv43FR1usUat9zpZ3mYfyoiaH1aClDH0orGcUn1bHOOuZSrJhiEcj/oCr0tAY
+JwMggJyoaRynQSJikWc1oqgcVkQFUSdhMafxEqcQCEQosDKSicjJgqhzWON5AfFY
+RAAzDkY3vG5iVpmGN0BpVRazUMcIqoIMOA0pLMdqQJE0iDggIlXGgOcQ1iOJQY/H
+VY795TRNAgLWdSosSQRhxGmAF4gCJJlgXuc1hQeEF3QVQkmHGlQgrVrQaQEiwSLF
+qZSu3OePFEB7VbCf7Dd81Ec/ro1u/yH/n8cQ3KDjWFWQ6AAQBAKPMasiVZIgVYAE
+qQKUI0A/Mb34NKFokxCVbgSbASbkYAJ1VRHnny1RYA0x/YbPyzghDaoBI5ICES8C
+TuBl5GBIbZVhEpcRQSBRkAB9DqbKJDWM00tn62D8pNrro1HKjd2U2m+4vTgQNAkT
+Ghkq22yJslpitmyK3IrFGrfj7wUlxsf+qmy733c2ie+6+ranNNQde2nr5ELKm2sZ
+GR2dTRXNFY89LfmLWdP2kC3f2q+G7WFh3H4yrv5h0a0BsTt75k7erp5VR835htGu
+saRjTy4UtE94MsDHA6O9r963JS7OXylucoQ+146cepS2fX3gzOGi8Ny9hBM3ly62
+Djbo49z18Hjp0eHqcJ8n+PLn2EpjMX9jLroyZ9/sQlLj9z1PV8oLi6fX3O1g+WDT
+XTEnwbZG2m3TQyXJqZa9U89vP1ufcC7FvPiSNdty7sGPXlntKWi1fs1tmlrqf52e
+tHNgsuNyeii188jxTPvubzPzn9rTMpaTu1Oc3qiSVdu2HpBQ1pw9mPsbgmYwEA==
+=vQzD
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/reecestart
+
+==================================================================
