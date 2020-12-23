@@ -2,3 +2,4 @@
 output
 output/*
 Makefile
+static/public/img/.DS_Store
