@@ -11,6 +11,7 @@
         "fixed": ":title/"
     },
     "theme": "lanyon-hugo",
+    "enableEmoji": true,
     "params": {
         "Title": "Reece's Weblog",
         "Tagline": "The weblog of an IT pro focusing on cloud computing, music, sport, and culture",
