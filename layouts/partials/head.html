@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="/css/poole.css">
   <link rel="stylesheet" href="/css/syntax.css">
   <link rel="stylesheet" href="/css/lanyon.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400&display=swap">
   <link rel="stylesheet" href="/public/font-awesome/css/font-awesome.min.css">
 
   <!--Canonical URL-->
@@ -45,4 +45,9 @@
     {{ printf `<link rel="alternate" type="%s" href="%s" title="%s" />` .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ printf `<link rel="feed" type="%s" href="%s" title="%s" />` .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
+
+  <!-- FOUT Avoid -->
+  <!-- <link rel="preload" as="font" crossorigin type="font/woff" href="../public/font-awesome/fonts/fontawesome-webfont.woff"> -->
+
+  <link rel="preload" as="font" crossorigin type="font/woff2" href="../public/font-awesome/fonts/fa-regular-400.woff2">
 </head>
