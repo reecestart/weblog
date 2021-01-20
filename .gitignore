@@ -3,3 +3,5 @@ output
 output/*
 Makefile
 static/public/img/.DS_Store
+*/.DS_Store
+.DS_Store
