@@ -10,6 +10,7 @@ tags:
 - Security
 title: "AWS Network Firewall"
 url: /2020/11/24/aws-network-firewall/
+description: "An overview of the deployment of the AWS Network Firewall."
 ---
 
 Looks like a new release called the [AWS Network Firewall](https://aws.amazon.com/about-aws/whats-new/2020/11/introducing-aws-network-firewall/) which is:

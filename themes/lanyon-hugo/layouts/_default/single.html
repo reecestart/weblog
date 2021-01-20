@@ -6,4 +6,9 @@
   {{ .Content }}
 </div>
 
+<meta
+     name="description"
+     content="{{ if .Params.summary }}{{ .Params.summary }}{{ end }}"
+   />
+
 {{ partial "default_foot.html" . }}
