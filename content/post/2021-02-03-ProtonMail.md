@@ -14,7 +14,7 @@ tags:
 - Route 53
 title: "ProtonMail"
 url: /2021/02/03/protonmail/
-draft: true
+draft: false
 description: "A journey migrating to ProtonMail."
 ---
 
