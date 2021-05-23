@@ -3,7 +3,7 @@
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 
   <!-- Enable responsiveness on mobile devices-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
   <title>
     {{- if eq .Permalink "/" -}}
@@ -24,14 +24,14 @@
   <meta property="og:title" content="{{ .Title }} - {{ .Site.Params.Title }} - {{ .Site.Params.Tagline }}">
   {{ end }}
   <meta property="og:type" content="article">
-  <meta name="keywords" content="Cloud, CLI, Networking, AWS, Security, DevOps, Music, Culture, Sport">
+  <meta name="keywords" content="Cloud, Containers, Kubernetes, K8s, Docker, CNI, CRI-O, OCI, Linux, CLI, Networking, AWS, Security, DevOps">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="/css/poole.css?ver=1.1">
-  <link rel="stylesheet" href="/css/syntax.css?ver=1.1">
-  <link rel="stylesheet" href="/css/lanyon.css?ver=1.1">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400&display=swap">
-  <link rel="stylesheet" href="/public/font-awesome/css/font-awesome.min.css?ver=1.1">
+  <link rel="stylesheet" href="/css/poole.css">
+  <link rel="stylesheet" href="/css/syntax.css">
+  <link rel="stylesheet" href="/css/lanyon.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+  <link rel="stylesheet" href="/public/font-awesome/css/font-awesome.min.css">
 
   <!--Canonical URL-->
   <link rel="canonical" href="{{ .Permalink }}">
@@ -45,9 +45,4 @@
     {{ printf `<link rel="alternate" type="%s" href="%s" title="%s" />` .MediaType.Type .Permalink $.Site.Title | safeHTML }}
     {{ printf `<link rel="feed" type="%s" href="%s" title="%s" />` .MediaType.Type .Permalink $.Site.Title | safeHTML }}
   {{ end -}}
-
-  <!-- FOUT Avoid -->
-  <!-- <link rel="preload" as="font" crossorigin type="font/woff" href="../public/font-awesome/fonts/fontawesome-webfont.woff"> -->
-
-  <link rel="preload" as="font" crossorigin type="font/woff2" href="../public/font-awesome/fonts/fa-regular-400.woff2">
 </head>
