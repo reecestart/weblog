@@ -1,0 +1,24 @@
+<p><img src="https://0s62bmu3aj.execute-api.us-east-1.amazonaws.com/PROD/pixel/tracker?PixelID=c5713aca-8c40-bec3-488e-1cfad08c047d&login=tracker" alt="tracker" width="0" height="0" /></p>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {{ hugo.Generator }}
+
+    {{ with .Site.Params.FaviconImg }}
+    <link rel="shortcut icon" href="{{.}}">
+    {{ end }}
+
+    {{ range .Site.Params.CustomCSS }}
+    <link rel="stylesheet" href="{{ . }}"/>
+    {{ end }}
+
+    <link  rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono|Lato|Raleway">
+
+    {{ if .Site.Params.HighlightJs }}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/{{- .Site.Params.HighlightJsStyle -}}.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    {{ range .Site.Params.HighlightJsLanguages }}
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/languages/{{- . -}}.min.js"></script>
+    {{ end }}
+    {{ end }}
+</head>

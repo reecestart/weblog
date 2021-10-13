@@ -7,11 +7,11 @@ weight: "1"
 type: fixed
 ---
 
-Thanks for visiting my site! My name is Reece Denne, and this is my weblog about various technical subjects, music, sport, culture and the occasional personal topic.
+Thanks for visiting my site! My name is Reece, and this is my weblog about various technical subjects, music, sport, culture and the occasional personal topic.
 
 ## Personal Information
 
-I live with my wife, Prue, and our son in Brisbane, Australia. When I'm not working or spending time with my family, I'm enjoying what south-east Queensland has to offer.
+I live with my wife, Prue, and our sons in Brisbane, Australia. When I'm not working or spending time with my family, I'm enjoying what south-east Queensland has to offer.
 
 ## Professional Information
 
