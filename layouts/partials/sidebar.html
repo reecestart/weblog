@@ -7,6 +7,9 @@
   <div class="sidebar-item">
     <p><img src="/public/img/reecestart-thumb.gif" alt="reecestart" width="128" height="128" /></p>
     <p>{{ .Site.Params.Description }}</p>
+    Dark Mode: 
+    <a  id="dark-mode-toggle" class="fal fa-moon-o"> On / Off <script src="/js/dark.js" ></script></a><a  class="fas fa-moon-o"> </a>
+
   </div>
 
   <nav class="sidebar-nav">
@@ -27,6 +30,7 @@
   </div>
 
   <div class="sidebar-item">
+    
     <p>&copy; {{ .Site.LastChange.Year }}. All rights reserved.</p>
   </div>
 </div>
