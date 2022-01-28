@@ -17,7 +17,7 @@ description: "Migrating blog to a subdomain"
 ---
 
 ![Subdomain](/public/img/subdomain.webp)
-*Photo by <a href="https://unsplash.com/@skopekmiroslav?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Miroslav Škopek</a> on <a href="https://unsplash.com/explore?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>*
+*Photo by [Miroslav Škopek](https://unsplash.com/@skopekmiroslav) on [Unsplash](https://unsplash.com)*
 
 No real relevance for that photo but thought it looked good. This post, which I started once before and since lost, has been in the making for some time. Migrating the blog from its current domain down to subdomain i.e. blog.denne.com.au
 
