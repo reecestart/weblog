@@ -8,3 +8,6 @@ static/public/img/.DS_Store
 
 # Hugo stuff
 .hugo_build.lock
+
+# Environment variables
+.env
