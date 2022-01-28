@@ -16,8 +16,7 @@ draft: false
 description: "Migrating blog to a subdomain"
 ---
 
-![Subdomain](/public/img/subdomain.webp)
-*Photo by [Miroslav Škopek](https://unsplash.com/@skopekmiroslav) on [Unsplash](https://unsplash.com)*
+[![Subdomain](/public/img/subdomain.webp "Photo by Miroslav Škopek on Unsplash")](https://unsplash.com/@skopekmiroslav)
 
 No real relevance for that photo but thought it looked good. This post, which I started once before and since lost, has been in the making for some time. Migrating the blog from its current domain down to subdomain i.e. blog.denne.com.au
 

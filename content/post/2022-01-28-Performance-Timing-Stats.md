@@ -14,8 +14,7 @@ draft: false
 description: "Adding Performance and Timing Stats to Hugo"
 ---
 
-![Performance Timing Stats](/public/img/performance-timing-stats.webp)
-*Photo by [Chris Liverani](https://unsplash.com/@chrisliverani) on [Unsplash](https://unsplash.com)*
+[![Performance Timing Stats](/public/img/performance-timing-stats.webp "Photo by Chris Liverani on Unsplash")](https://unsplash.com/@chrisliverani)
 
 Performance is important. Page load times are important. Slow page loading times equal less engagement, lower page rank, less hits. It goes on and on.
 
