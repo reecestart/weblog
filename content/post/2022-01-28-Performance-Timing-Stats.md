@@ -10,7 +10,7 @@ tags:
 - JavaScript
 title: "Performance and Timing Stats"
 url: /2022/01/28/performance-timing-stats/
-draft: true
+draft: false
 description: "Adding Performance and Timing Stats to Hugo"
 ---
 
