@@ -6,8 +6,10 @@ date: 2022-06-29T12:16:00+10:00
 tags:
 - AWS Systems Manager
 - Troubleshooting
+- IAM
+- Fleet Manager
 title: "Troubleshooting Systems Manager"
-url: /2022/01/28/performance-timing-stats/
+url: /2022/06/29/troubleshooting-systems-manager/
 draft: false
 description: "Troubleshooting AWS Systems Manager"
 ---
