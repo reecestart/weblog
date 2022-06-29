@@ -33,5 +33,8 @@
   <!-- FOUT Avoid -->
   <!-- <link rel="preload" as="font" crossorigin type="font/woff" href="../public/font-awesome/fonts/fontawesome-webfont.woff"> -->
 
-  <link rel="preload" as="font" crossorigin type="font/woff2" href="../public/font-awesome/fonts/fa-regular-400.woff2">
+  <link rel="preload" href="../public/font-awesome/fonts/fa-regular-400.woff2" as="font" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="../public/font-awesome/fonts/fa-regular-400.woff2"></noscript>
+
+  <!-- Testing <link rel="preload" as="font" crossorigin type="font/woff2" href="../public/font-awesome/fonts/fa-regular-400.woff2"> -->
 </head>

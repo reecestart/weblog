@@ -11,3 +11,6 @@ static/public/img/.DS_Store
 
 # Environment variables
 .env
+
+# VS Code
+.vscode
