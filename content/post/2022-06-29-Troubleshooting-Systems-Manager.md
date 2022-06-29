@@ -8,7 +8,7 @@ tags:
 - Troubleshooting
 title: "Troubleshooting Systems Manager"
 url: /2022/01/28/performance-timing-stats/
-draft: true
+draft: false
 description: "Troubleshooting AWS Systems Manager"
 ---
 
