@@ -12,7 +12,7 @@ setTheme(savedTheme);
 
 // set the appropriate theme when the user toggles the button
 toggle.addEventListener("click", () => {
-    if (toggle.className === "far fa-moon") {
+    if (toggle.className === "fa fa-moon") {
       setTheme("dark");
       localStorage.setItem("dark-mode-storage", "dark");
     } else if (toggle.className === "far fa-sun") {
@@ -42,7 +42,7 @@ function setTheme(mode) {
       toggle.title = "Enable Light Mode";
     } else if (mode === "light") {
       darkTheme.disabled = true;
-      toggle.className = "far fa-moon";
+      toggle.className = "fa fa-moon";
       toggle.title = "Enable Dark Mode";
     }
   }
