@@ -15,7 +15,7 @@ toggle.addEventListener("click", () => {
     if (toggle.className === "fa fa-moon") {
       setTheme("dark");
       localStorage.setItem("dark-mode-storage", "dark");
-    } else if (toggle.className === "far fa-sun") {
+    } else if (toggle.className === "fa fa-sun") {
       setTheme("light");
       localStorage.setItem("dark-mode-storage", "light");
     }
@@ -38,7 +38,7 @@ window
 function setTheme(mode) {
     if (mode === "dark") {
       darkTheme.disabled = false;
-      toggle.className = "far fa-sun";
+      toggle.className = "fa fa-sun";
       toggle.title = "Enable Light Mode";
     } else if (mode === "light") {
       darkTheme.disabled = true;
