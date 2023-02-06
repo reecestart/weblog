@@ -5,5 +5,5 @@ function Pageloadtime() {
     // Time calculating in seconds  
     pgloadtime = (aftr_loadtime - before_loadtime) / 1000
 
-    document.getElementById("loadtime").innerHTML = "Page load time - <b>" + pgloadtime + "</b></font> seconds";
+    document.getElementById("loadtime").innerHTML = " <a href=\"https://blog.denne.com.au/2022/01/28/performance-timing-stats/\">Page load time</a> - <b>" + pgloadtime + "</b></font> seconds";
 } 
