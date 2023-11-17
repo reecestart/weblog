@@ -19,29 +19,19 @@
         "GitHubUser": "reecestart",
         "TwitterUser": "reecestart",
         "LinkedInUser": "reecedenne",
-        "Description": "Original, technical content centered around cloud computing, as well as content on music, sport, and culture",
-        "algolia": {
-            "vars": ["title", "summary", "date", "publishdate", "expirydate", "permalink"],
-            "params": ["categories", "tags"]
-        }
+        "Description": "Original, technical content centered around cloud computing, as well as content on music, sport, and culture"
     },
     "blackfriday": {
         "fractions": false
     },
     "outputs": {
-        "home": ["HTML","RSS","Algolia"],
+        "home": ["HTML","RSS"],
         "taxonomy": ["HTML","RSS"]
     },
     "outputformats": {
         "RSS": {
             "mediatype": "application/rss",
             "baseName": "feed"
-        },
-        "Algolia": {
-            "baseName": "algolia",
-            "isPlainText": true,
-            "mediaType": "application/json",
-            "notAlternative":  true
         }
     },
    "sitemap": {
