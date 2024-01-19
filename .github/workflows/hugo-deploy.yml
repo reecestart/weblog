@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -17,7 +18,7 @@ jobs:
           extended: true
 
       - name: Build Hugo Site
-        run: hugo
+        run: hugo -d output
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -27,7 +28,7 @@ jobs:
           aws-region: ap-southeast-2
 
       - name: Sync to S3
-        run: aws s3 sync public s3://${{ secrets.AWS_S3_BUCKET }} --region ap-southeast-2 --delete
+        run: aws s3 sync output/ s3://${{ secrets.AWS_S3_BUCKET }} --region ap-southeast-2 --delete
 
       - name: Invalidate CloudFront Distribution
-        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths / /archives/ /about/ /categories/ /feed.xml
