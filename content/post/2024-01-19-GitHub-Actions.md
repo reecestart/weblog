@@ -51,10 +51,10 @@ jobs:
       - name: Validate HTML
         run: |
           html5validator --root output/ \
-          --ignore 'Start tag seen without seeing a doctype first. Expected “<!DOCTYPE html>”.' \
-          --ignore 'Element “html” is missing required attribute “lang”.' \
-          --ignore 'Attribute “xml:lang” not allowed on element “html” at this point.' \
-          --ignore 'Attribute “frameborder” not allowed on element “iframe” at this point.'
+            --ignore 'Start tag seen without seeing a doctype first. Expected “<!DOCTYPE html>”.' \
+            --ignore 'Element “html” is missing required attribute “lang”.' \
+            --ignore 'Attribute “xml:lang” not allowed on element “html” at this point.' \
+            --ignore 'Attribute “frameborder” not allowed on element “iframe” at this point.'
 
       - name: Find Latest Markdown File and Validate Corresponding HTML
         run: |
