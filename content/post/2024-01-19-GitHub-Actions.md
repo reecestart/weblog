@@ -49,7 +49,8 @@ jobs:
           pip3 install html5validator
 
       - name: Validate HTML
-        run: html5validator --root output/
+        run: |
+          html5validator --root output/ --ignore-re 'Attribute “.*” not allowed'
 
       - name: Find Latest Markdown File and Validate Corresponding HTML
         run: |
