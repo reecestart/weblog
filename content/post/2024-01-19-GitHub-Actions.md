@@ -31,7 +31,8 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Set up Hugo
         uses: peaceiris/actions-hugo@v2
@@ -40,7 +41,7 @@ jobs:
           extended: true
 
       - name: Build Hugo Site
-        run: hugo -d output
+        run: hugo --minify
       
       - name: Install Tidy
         run: sudo apt-get install -y tidy
@@ -49,27 +50,27 @@ jobs:
         run: |
           find output/ -name '*.html' -exec tidy -e -q {} \; || true
 
-      - name: Find Latest Markdown File and Validate Corresponding HTML
-        run: |
-          MD_FILE=$(git log -1 --pretty=format: --name-only | grep '\.md$')
-          if [ -z "$MD_FILE" ]; then
-            echo "No markdown file found in the latest commit."
-            exit 1
-          fi
-          HTML_FILE=$(echo $MD_FILE | sed 's|content/||; s|\.md$|.html|')
-          HTML_PATH="output/${HTML_FILE}"
-          echo "Checking HTML file: $HTML_PATH"
-          if [ ! -f "$HTML_PATH" ]; then
-            echo "HTML file does not exist: $HTML_PATH"
-            exit 1
-          fi
-          CONTENT_TO_CHECK=$(sed -n '5p' $MD_FILE)
-          if grep -q "$CONTENT_TO_CHECK" "$HTML_PATH"; then
-            echo "Content found in HTML file."
-          else
-            echo "Content not found in HTML file."
-            exit 1
-          fi
+          - name: Find Latest Markdown File and Validate Corresponding HTML
+          run: |
+            MD_FILE=$(git diff --name-only HEAD HEAD~1 | grep '\.md$' | head -n 1)
+            if [ -z "$MD_FILE" ]; then
+              echo "No markdown file found in the latest commit."
+              exit 0
+            fi
+            HTML_FILE=$(echo $MD_FILE | sed 's|content/post/||; s|\.md$|/index.html|; s|-|/|g')
+            HTML_PATH="output/${HTML_FILE}"
+            echo "Checking HTML file: $HTML_PATH"
+            if [ ! -f "$HTML_PATH" ]; then
+              echo "HTML file does not exist: $HTML_PATH"
+              exit 1
+            fi
+            CONTENT_TO_CHECK=$(sed -n '5p' $MD_FILE)
+            if grep -q "$CONTENT_TO_CHECK" "$HTML_PATH"; then
+              echo "Content found in HTML file."
+            else
+              echo "Content not found in HTML file."
+              exit 1
+            fi
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
