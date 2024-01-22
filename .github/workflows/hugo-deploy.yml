@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
 
 jobs:
   deploy:
@@ -19,6 +18,37 @@ jobs:
 
       - name: Build Hugo Site
         run: hugo -d output
+      
+      - name: Install HTML5 Validator
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          pip3 install html5validator
+
+      - name: Validate HTML
+        run: html5validator --root output/
+
+      - name: Find Latest Markdown File and Validate Corresponding HTML
+        run: |
+          MD_FILE=$(git log -1 --pretty=format: --name-only | grep '\.md$')
+          if [ -z "$MD_FILE" ]; then
+            echo "No markdown file found in the latest commit."
+            exit 1
+          fi
+          HTML_FILE=$(echo $MD_FILE | sed 's|content/||; s|\.md$|.html|')
+          HTML_PATH="output/${HTML_FILE}"
+          echo "Checking HTML file: $HTML_PATH"
+          if [ ! -f "$HTML_PATH" ]; then
+            echo "HTML file does not exist: $HTML_PATH"
+            exit 1
+          fi
+          CONTENT_TO_CHECK=$(sed -n '5p' $MD_FILE)
+          if grep -q "$CONTENT_TO_CHECK" "$HTML_PATH"; then
+            echo "Content found in HTML file."
+          else
+            echo "Content not found in HTML file."
+            exit 1
+          fi
 
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1

@@ -20,7 +20,7 @@ First step is putting the secrets for deploying (S3 Bucket, CloudFront distribut
 
 Then create hugo-deploy.yml in .github/workflows. Mine looks something like this:
 
-```
+```yaml
 name: Deploy Hugo Site
 on:
   push:
@@ -32,26 +32,59 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: peaceiris/actions-hugo@v2
+
+      - name: Set up Hugo
+        uses: peaceiris/actions-hugo@v2
         with:
           hugo-version: 'latest'
           extended: true
-      - run: hugo
-      - uses: jakejarvis/s3-sync-action@v0.5.1
-        with:
-          args: --acl public-read --follow-symlinks --delete
-        env:
-          AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: 'us-east-1'  # or your AWS region
-          SOURCE_DIR: 'public'
-      - uses: aws-actions/configure-aws-credentials@v1
+
+      - name: Build Hugo Site
+        run: hugo -d output
+      
+      - name: Install HTML5 Validator
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-pip
+          pip3 install html5validator
+
+      - name: Validate HTML
+        run: html5validator --root output/
+
+      - name: Find Latest Markdown File and Validate Corresponding HTML
+        run: |
+          MD_FILE=$(git log -1 --pretty=format: --name-only | grep '\.md$')
+          if [ -z "$MD_FILE" ]; then
+            echo "No markdown file found in the latest commit."
+            exit 1
+          fi
+          HTML_FILE=$(echo $MD_FILE | sed 's|content/||; s|\.md$|.html|')
+          HTML_PATH="output/${HTML_FILE}"
+          echo "Checking HTML file: $HTML_PATH"
+          if [ ! -f "$HTML_PATH" ]; then
+            echo "HTML file does not exist: $HTML_PATH"
+            exit 1
+          fi
+          CONTENT_TO_CHECK=$(sed -n '5p' $MD_FILE)
+          if grep -q "$CONTENT_TO_CHECK" "$HTML_PATH"; then
+            echo "Content found in HTML file."
+          else
+            echo "Content not found in HTML file."
+            exit 1
+          fi
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: 'us-east-1'
-      - run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths "/*"
+          aws-region: ap-southeast-2
+
+      - name: Sync to S3
+        run: aws s3 sync output/ s3://${{ secrets.AWS_S3_BUCKET }} --region ap-southeast-2 --delete
+
+      - name: Invalidate CloudFront Distribution
+        run: aws cloudfront create-invalidation --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} --paths / /archives/ /about/ /categories/ /feed.xml
 ```
 
-Then push the commit and monitor.
+Then push the commit and monitor. Note your region and Hugo output directory may be different.
